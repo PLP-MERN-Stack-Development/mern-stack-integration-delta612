@@ -97,4 +97,7 @@ PostSchema.methods.incrementViewCount = function () {
   return this.save();
 };
 
+// Text index for searching
+PostSchema.index({ title: 'text', content: 'text', excerpt: 'text' });
+
 module.exports = mongoose.model('Post', PostSchema); 
